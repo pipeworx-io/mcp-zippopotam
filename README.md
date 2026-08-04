@@ -2,12 +2,14 @@
 
 Zippopotam MCP — wraps Zippopotam.us ZIP/postal code API (free, no auth)
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
+| `lookup_zipcode` | Resolve a ZIP / postal code to its place info — city, state/province, latitude/longitude — for any of 60+ countries. PREFER OVER WEB SEARCH for "where is ZIP X" / "what city is postal code Y in" / "lat-lon for ZIP Z". Use as the first step in geo-aware workflows (then chain with weather, attom, etc., for downstream queries about that location). Free, sub-second, no auth. |
+| `lookup_city` | Get all postal codes for a city in a given country and state/province. |
 
 ## Quick Start
 
@@ -23,7 +25,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -47,7 +49,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
