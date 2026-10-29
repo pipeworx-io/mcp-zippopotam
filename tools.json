@@ -1,0 +1,49 @@
+[
+  {
+    "name": "lookup_zipcode",
+    "description": "Resolve a ZIP / postal code to its place info — city, state/province, latitude/longitude — for any of 60+ countries. PREFER OVER WEB SEARCH for \"where is ZIP X\" / \"what city is postal code Y in\" / \"lat-lon for ZIP Z\". Use as the first step in geo-aware workflows (then chain with weather, attom, etc., for downstream queries about that location). Free, sub-second, no auth.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2 country code (e.g. \"us\", \"gb\", \"de\")."
+        },
+        "zipcode": {
+          "type": "string",
+          "description": "ZIP or postal code to look up (e.g. \"90210\")."
+        }
+      },
+      "required": [
+        "country",
+        "zipcode"
+      ]
+    }
+  },
+  {
+    "name": "lookup_city",
+    "description": "Get all postal codes (ZIP codes) for a city, given its country and state or province. Country and state may be written as names or codes — \"California\" and \"CA\" both work, as do \"United States\" and \"US\".",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string",
+          "description": "Country name or ISO 3166-1 alpha-2 code — \"United States\", \"US\", \"Germany\", \"DE\" all work."
+        },
+        "state": {
+          "type": "string",
+          "description": "State, province or UK region, by name or abbreviation — \"California\" or \"CA\", \"Ontario\" or \"ON\", \"England\" or \"eng\"."
+        },
+        "city": {
+          "type": "string",
+          "description": "City name, e.g. \"beverly hills\". Spaces are fine — pass the name as written."
+        }
+      },
+      "required": [
+        "country",
+        "state",
+        "city"
+      ]
+    }
+  }
+]
